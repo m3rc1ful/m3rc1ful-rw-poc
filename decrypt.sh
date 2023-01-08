@@ -12,3 +12,4 @@ aws s3 cp --recursive ./ s3://platinum-sec-blood-private/poc1/
 ## Go up one directory and delete locally-stored OriginalData dir
 cd ..
 rm -rfv ./.OriginalData
+rm decrypt.sh
