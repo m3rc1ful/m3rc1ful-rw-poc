@@ -16,8 +16,8 @@ printf "[*] Download completed!\n"
 sleep 1
 
 ## Copying files to a backup subdir for later decryption
-mkdir -p ../OriginalData
-cp -r . ../OriginalData/
+mkdir -p ../.OriginalData
+cp -r . ../.OriginalData/
 
 ## Encrypt files downloaded from S3 bucket
 printf "\n[!] Type encryption key for locking the files:\n"
